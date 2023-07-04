@@ -27,10 +27,13 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.goSecondFragment.setOnClickListener{
-            val bundle = Bundle()
-            bundle.putString("message", "Hello Second Fragment")
-            val action = R.id.action_firstFragment_to_secondFragment
-            findNavController().navigate(action,bundle)
+            val direction = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+            findNavController().navigate(direction)
+        }
+
+        binding.goThirdFragmentButton.setOnClickListener{
+            val direction = FirstFragmentDirections.actionFirstFragmentToThirdFragment()
+            findNavController().navigate(direction)
         }
 
     }
