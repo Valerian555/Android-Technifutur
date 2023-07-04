@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Exo1</string>
+    <string name="button_open">Ouvrir</string>
+    <string name="second_activity_title">Seconde activité</string>
+</resources>
