@@ -14,15 +14,14 @@
         android:id="@+id/newsFragment"
         android:name="com.technipixl.Exo5.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/profilFragment"
-        android:name="com.technipixl.Exo5.ProfilFragment"
-        android:label="fragment_profil"
-        tools:layout="@layout/fragment_profil" />
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.technipixl.Exo5.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.technipixl.Exo5.NewsDetailsFragment"
+        android:label="fragment_news_details"
+        tools:layout="@layout/fragment_news_details" />
 </navigation>
