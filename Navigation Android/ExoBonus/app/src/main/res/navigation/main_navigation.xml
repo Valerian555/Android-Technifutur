@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.technipixl.exobonus.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_moviesFragment_to_listMoviesFragment"
+            app:destination="@id/listMoviesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gamesFragment"
+        android:name="com.technipixl.exobonus.GamesFragment"
+        android:label="fragment_games"
+        tools:layout="@layout/fragment_games" >
+        <action
+            android:id="@+id/action_gamesFragment_to_listGamesFragment"
+            app:destination="@id/listGamesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listMoviesFragment"
+        android:name="com.technipixl.exobonus.ListMoviesFragment"
+        android:label="fragment_list_movies"
+        tools:layout="@layout/fragment_list_movies" >
+        <argument
+            android:name="genre"
+            app:argType="com.technipixl.exobonus.MovieGenre" />
+        <action
+            android:id="@+id/action_listMoviesFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listGamesFragment"
+        android:name="com.technipixl.exobonus.ListGamesFragment"
+        android:label="fragment_list_games"
+        tools:layout="@layout/fragment_list_games" >
+        <argument
+            android:name="type"
+            app:argType="com.technipixl.exobonus.TypeOfGames" />
+        <action
+            android:id="@+id/action_listGamesFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.technipixl.exobonus.DescriptionFragment"
+        android:label="fragment_description"
+        tools:layout="@layout/fragment_description" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
+</navigation>
