@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_title">Home</string>
     <string name="news_title">News</string>
+    <string name="news_ic_title">News</string>
+    <string name="home_ic_title">Home</string>
+    <string name="details_title">Details</string>
 </resources>

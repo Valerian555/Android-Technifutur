@@ -24,6 +24,8 @@
         android:layout_height="wrap_content"
         android:text="@string/second_fragment_button"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:icon="?attr/actionModeCloseDrawable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

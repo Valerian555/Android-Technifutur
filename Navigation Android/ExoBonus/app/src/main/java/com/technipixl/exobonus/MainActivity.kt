@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.technipixl.exobonus.databinding.ActivityMainBinding
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
     }
 
     override fun onStart() {
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         //changement du texte de la toolbar en fonction du fragment
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            when(destination.id){
+            when (destination.id) {
                 R.id.moviesFragment -> binding.toolbarTitle.text = "Movies"
                 R.id.gamesFragment -> binding.toolbarTitle.text = "Games"
                 R.id.listGamesFragment -> binding.toolbarTitle.text = "Categories"
@@ -53,8 +55,9 @@ class MainActivity : AppCompatActivity() {
 
     //gérer la flèche retour dans la toolbar
     override fun onSupportNavigateUp(): Boolean {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-        val  navController = navHostFragment.navController
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+        val navController = navHostFragment.navController
         return navController.navigateUp()
     }
-    }
+}

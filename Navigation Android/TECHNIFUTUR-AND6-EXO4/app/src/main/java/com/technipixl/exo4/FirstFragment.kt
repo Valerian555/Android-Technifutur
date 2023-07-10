@@ -33,5 +33,4 @@ class FirstFragment : Fragment() {
             findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment("Hello second fragment"))
         }
     }
-
 }

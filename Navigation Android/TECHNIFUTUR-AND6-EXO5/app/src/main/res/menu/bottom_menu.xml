@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:title="Home"
+        android:title="@string/home_ic_title"
         android:icon="@drawable/home_ic"
         android:iconTintMode="src_atop"/>
     <item
         android:id="@+id/newsFragment"
-        android:title="News"
+        android:title="@string/news_ic_title"
         android:icon="@drawable/news_ic"
         android:iconTintMode="src_atop"/>
 </menu>

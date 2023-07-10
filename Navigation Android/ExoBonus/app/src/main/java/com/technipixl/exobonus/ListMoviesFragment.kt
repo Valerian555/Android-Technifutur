@@ -58,7 +58,6 @@ class ListMoviesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         listOfMovies.filter {
             it.genre == args.genre
         }.forEach {movie ->
