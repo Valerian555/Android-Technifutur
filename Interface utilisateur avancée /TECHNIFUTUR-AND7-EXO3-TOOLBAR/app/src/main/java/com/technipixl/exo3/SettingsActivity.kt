@@ -17,7 +17,6 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-
     //ajoute le menu about dans la toolbar par défaut
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_about, menu)
