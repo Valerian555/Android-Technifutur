@@ -28,6 +28,14 @@ class AddContactFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.cancelButton.setOnClickListener {
+            //permet d'obtener la BackStackEntry du fragment précédent
+            val savedStateHandle = findNavController().previousBackStackEntry?.savedStateHandle
+
+            /*La constante FirstFragment.DETAIL_TEXT (qui est définie dans le premier fragment)
+            est la clé pour stocker la valeur. La valeur est obtenue à partir du texte de l'editText.*/
+            savedStateHandle?.set(ContactFragment.DETAIL_TEXT, Person(binding.firstName.text.toString(),binding.lastName.text.toString()))
+
+
             findNavController().navigateUp()
         }
     }
