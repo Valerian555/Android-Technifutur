@@ -6,4 +6,6 @@
     <string name="fragment_food_title">Manger</string>
     <string name="fragment_fun_title">Rigoler</string>
     <string name="fragment_move_title">Bouger</string>
+    <string name="whatsup_message_textView">Hey! Koment ksé?</string>
+    <string name="login_button">Se connecter</string>
 </resources>

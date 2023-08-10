@@ -4,36 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthenticationActivity">
+    tools:context=".AuthenticationActivity"
+    android:background="@mipmap/bg_blue_homeboarding">
+
+    <ImageView
+        android:id="@+id/jean_kevin_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_jeankevin_full"
+        app:layout_constraintTop_toBottomOf="@id/bottom_bubble"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_bubble"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/input_rounded_background"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="30dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/whatsupp_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/whatsup_message_textView"
+                android:textColor="@color/rose"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/login_status_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allez... Connecte toi!"
+                android:textColor="@color/black"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/bottom_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_bubble_triangle"
+        app:layout_constraintTop_toBottomOf="@id/top_bubble"
+        app:layout_constraintEnd_toEndOf="@id/top_bubble"
+        android:layout_marginRight="40dp"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:background="@drawable/inout_login_top_rounded">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEditText"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Email" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@mipmap/ico_profile_blue"
+                app:errorIconDrawable="@mipmap/ico_cross_rose"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:background="@drawable/input_rounded_background"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:background="@android:color/transparent"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:startIconDrawable="@mipmap/ico_password_blue"
+            app:errorIconDrawable="@mipmap/ico_cross_rose"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/input_rounded_background"
+            app:hintEnabled="true"
             android:layout_marginTop="20dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Mot de passe" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Mot de passe"
+            android:inputType="textPassword"
+            android:background="@android:color/transparent"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -41,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Se connecter"
+            android:text="@string/login_button"
             android:onClick="openHome"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
