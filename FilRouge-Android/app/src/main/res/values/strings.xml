@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FilRouge</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_home_title">Accueil</string>
+    <string name="fragment_food_title">Manger</string>
+    <string name="fragment_fun_title">Rigoler</string>
+    <string name="fragment_move_title">Bouger</string>
+</resources>
