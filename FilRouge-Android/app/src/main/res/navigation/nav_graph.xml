@@ -25,4 +25,9 @@
         android:name="com.technipixl.filrouge.MoveFragment"
         android:label="fragment_move"
         tools:layout="@layout/fragment_move" />
+    <fragment
+        android:id="@+id/homeImageFragment"
+        android:name="com.technipixl.filrouge.HomeImageFragment"
+        android:label="fragment_home_image"
+        tools:layout="@layout/fragment_home_image" />
 </navigation>

@@ -31,7 +31,6 @@ class AuthenticationActivity : AppCompatActivity() {
             binding.passwordEditText,
             "Le mot de passe n'est pas valide"
         )
-
     }
 
     fun openHome(view: View) {
@@ -41,6 +40,7 @@ class AuthenticationActivity : AppCompatActivity() {
         }
     }
 
+    //fonction de vérification de la validité des champs
     fun isValid(editText: EditText): Boolean {
         return if (editText == binding.emailEditText) {
             editText.text.toString().matches(android.util.Patterns.EMAIL_ADDRESS.toRegex())
@@ -52,6 +52,7 @@ class AuthenticationActivity : AppCompatActivity() {
         }
     }
 
+    //listener sur les textfields qui adapte son UI en fonction de sa validité
     fun updateTextField(textLayout: TextInputLayout, editText: EditText, errorMessage: String) {
         editText.doAfterTextChanged {
             if (isValid(editText)) {
@@ -67,6 +68,7 @@ class AuthenticationActivity : AppCompatActivity() {
         }
     }
 
+    //modification de l'UI du bouton en fonction de la validité des champs
     fun updateButton() {
         if (isValid(binding.emailEditText) && isValid(binding.passwordEditText)) {
             binding.loginButton.background = getDrawable(R.drawable.input_rounded_green_button)
