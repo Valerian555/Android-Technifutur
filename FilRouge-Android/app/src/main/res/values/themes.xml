@@ -13,4 +13,13 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="CustomButtonStyle" parent="ThemeOverlay.AppCompat">
+        <item name="android:background">@drawable/input_rounded_green_button</item>
+        <item name="background">@drawable/input_rounded_green_button</item>
+        <item name="android:textColor">@color/white</item>
+        <!-- Autres attributs personnalisés -->
+    </style>
+
+
 </resources>
