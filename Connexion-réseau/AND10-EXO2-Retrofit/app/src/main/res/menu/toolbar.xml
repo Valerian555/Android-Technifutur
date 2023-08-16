@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/increase_button"
+        android:icon="@drawable/increase"
+        />
+    <item
+        android:id="@+id/decrease_button"
+        android:icon="@drawable/decrease"
+        />
+
+    <item
+        android:id="@+id/cancel_filter_button"
+        android:icon="@drawable/filter"
+        />
+</menu>
