@@ -1,4 +1,4 @@
-package com.technipixl.exo2
+package com.technipixl.exo2.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.technipixl.exo2.databinding.FragmentHomeBinding
-import com.technipixl.exo2.models.Cryptos
-import com.technipixl.exo2.network.CryptoServiceImpl
+import com.technipixl.exo2.network.models.Cryptos
+import com.technipixl.exo2.network.service.CryptoServiceImpl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,6 +19,7 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     var cryptosList: MutableList<Cryptos> = mutableListOf()
     private val cryptoServiceImpl by lazy { CryptoServiceImpl() }
+    lateinit var adapter: CryptoHomeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,8 +31,19 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        getCryptoAsync()
+        retrieveData()
 
+        binding.increaseButton.setOnClickListener {
+            adapter.sortedPositiveItem()
+        }
+
+        binding.decreaseButton.setOnClickListener {
+            adapter.sortedNegativeItem()
+        }
+
+        binding.cancelFilterButton.setOnClickListener {
+            adapter.cancelFilter()
+        }
     }
 
     private fun setupRecyclerView() {
@@ -44,14 +54,14 @@ class HomeFragment : Fragment() {
         //defintion de son layout
         recyclerView.layoutManager = GridLayoutManager(context, 2)
 
-
-        recyclerView.adapter = CryptoAdapter(cryptosList)
+        adapter = CryptoHomeAdapter(cryptosList)
+        recyclerView.adapter = adapter
 
     }
 
-    private fun getCryptoAsync() {
+    private fun retrieveData() {
         CoroutineScope(Dispatchers.IO).launch {
-            val response = cryptoServiceImpl.getCrypto()
+            val response = cryptoServiceImpl.getCryptoList()
             withContext(Dispatchers.Main) {
                 try {
                     if (response.isSuccessful) {

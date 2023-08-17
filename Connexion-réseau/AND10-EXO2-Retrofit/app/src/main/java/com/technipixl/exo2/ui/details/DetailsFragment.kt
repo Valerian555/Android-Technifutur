@@ -1,11 +1,11 @@
-package com.technipixl.exo2
+package com.technipixl.exo2.ui.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.navArgs
+import com.technipixl.exo2.R
 
 class DetailsFragment : Fragment() {
 
@@ -15,6 +15,7 @@ class DetailsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_details, container, false)
+
 
     }
 

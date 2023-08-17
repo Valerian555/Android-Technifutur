@@ -1,15 +1,16 @@
-package com.technipixl.exo2
+package com.technipixl.exo2.ui.home
 
-import android.graphics.Color
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.technipixl.exo2.R
 import com.technipixl.exo2.databinding.HomeCellLayoutBinding
-import com.technipixl.exo2.models.Cryptos
+import com.technipixl.exo2.network.models.Cryptos
 import kotlin.math.roundToInt
 
 class HomeCryptoViewHolder(private var viewBinding: HomeCellLayoutBinding) : RecyclerView.ViewHolder(viewBinding.root) {
 
-        fun bind(crypto: Cryptos) {
+        fun setup(crypto: Cryptos) {
+
+
             val roundedCrypto =
                 ((crypto.changePercent24Hr?.toDouble())?.times(10))?.roundToInt()?.toDouble()
                     ?.div(10)
@@ -22,7 +23,6 @@ class HomeCryptoViewHolder(private var viewBinding: HomeCellLayoutBinding) : Rec
             viewBinding.symboleTextview.text = crypto.symbol
             viewBinding.cryptoNameTextview.text = crypto.name
             viewBinding.percentTextview.text = "$roundedCrypto%"
-
 
         }
 }
