@@ -4,50 +4,32 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.technipixl.exo2.databinding.HomeCellLayoutBinding
-import com.technipixl.exo2.network.models.Cryptos
-import kotlin.math.roundToInt
+import com.technipixl.exo2.network.model.Crypto
+import com.technipixl.exo2.network.model.CryptoResponse
 
-class CryptoHomeAdapter(private var cryptoList: MutableList<Cryptos>) :
-    RecyclerView.Adapter<HomeCryptoViewHolder>() {
+class CryptoHomeAdapter (private val cryptoResponse: CryptoResponse):
+    RecyclerView.Adapter<CryptoHomeViewHolder>() {
     private lateinit var binding: HomeCellLayoutBinding
+    private val filteredList = mutableListOf<Crypto>()
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): HomeCryptoViewHolder {
+    init {
+        filteredList.addAll(cryptoResponse.cryptoList)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CryptoHomeViewHolder {
         //charge le layout de la cellule
         binding = HomeCellLayoutBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return HomeCryptoViewHolder(binding)
+        return CryptoHomeViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: HomeCryptoViewHolder, position: Int) {
-        holder.setup(cryptoList[position])
-    }
-
-    //retourne le nbr d'élément à afficher
     override fun getItemCount(): Int {
-        return cryptoList.size
+        return filteredList.size
     }
 
-    var sortedList = cryptoList
-
-    fun sortedPositiveItem() {
-        cryptoList = sortedList.filter { ((it.changePercent24Hr?.toDouble())?.times(10))?.roundToInt()?.toDouble()
-            ?.div(10)!! >= 0 }.toMutableList()
-
-        cryptoList.sortedByDescending { it.changePercent24Hr?.toDouble() }
-        notifyDataSetChanged()
+    override fun onBindViewHolder(holder: CryptoHomeViewHolder, position: Int) {
+        holder.setup(filteredList[position])
     }
 
-    fun sortedNegativeItem() {
-        cryptoList = sortedList.filter {((it.changePercent24Hr?.toDouble())?.times(10))?.roundToInt()?.toDouble()
-            ?.div(10)!! < 0 }.toMutableList()
-        notifyDataSetChanged()
-    }
 
-    fun cancelFilter() {
-        cryptoList = sortedList
-        notifyDataSetChanged()
-    }
 }
