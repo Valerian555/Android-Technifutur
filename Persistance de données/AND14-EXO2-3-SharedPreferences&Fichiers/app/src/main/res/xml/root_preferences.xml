@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 3. Créer le layout de menu preferences-->
+    <ListPreference
+        app:entries="@array/color_entries"
+        app:entryValues="@array/color_values"
+        app:key="color_key"
+        app:title="Couleurs"
+        app:summary="Veuillez choisir une couleur"
+        app:dialogTitle="Veuillez choisir une couleur"
+        app:useSimpleSummaryProvider="true" />
+
+    <EditTextPreference
+        app:dialogTitle="Veuillez saisir un titre"
+        app:key="title_key"
+        app:title="Titre du login"/>
+
+</PreferenceScreen>
