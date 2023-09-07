@@ -7,7 +7,6 @@ import retrofit2.http.Headers
 
 interface CryptoService {
 
-    @Headers("Content-type: application/json")
-    @GET("asset")
+    @GET("assets")
     suspend fun getCryptoList(): Response<CryptoResponse>
 }

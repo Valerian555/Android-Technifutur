@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:id="@+id/container"
+    android:layout_width="190dp"
+    android:layout_height="190dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="25dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@color/dark_cell_background">
 
         <TextView
             android:id="@+id/symbol_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="symbol"
+            android:text="BTC"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
             />
 
         <TextView
             android:id="@+id/name_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="name"
+            android:text="Bitcoin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/symbol_textview"
+            android:textColor="@color/grey_text"
+            android:textSize="15sp"
             />
 
 
@@ -31,9 +42,12 @@
             android:id="@+id/percentl_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="percent"
+            android:text="-0.56%"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/negative_text"
+            android:textStyle="bold"
+            android:textSize="30sp"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

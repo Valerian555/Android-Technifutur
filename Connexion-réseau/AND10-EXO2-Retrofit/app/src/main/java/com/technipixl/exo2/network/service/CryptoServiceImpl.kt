@@ -26,6 +26,6 @@ class CryptoServiceImpl {
     }
 
     suspend fun getCryptoList(): Response<CryptoResponse> {
-        return  retrofit().create(CryptoService::class.java).getCryptoList()
+        return retrofit().create(CryptoService::class.java).getCryptoList()
     }
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.technipixl.filrouge.HomeFragment"
+        android:name="com.technipixl.filrouge.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_move" />
     <fragment
         android:id="@+id/homeImageFragment"
-        android:name="com.technipixl.filrouge.HomeImageFragment"
+        android:name="com.technipixl.filrouge.home.HomeImageFragment"
         android:label="fragment_home_image"
         tools:layout="@layout/fragment_home_image" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.technipixl.filrouge
+package com.technipixl.filrouge.authentication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.EditText
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.textfield.TextInputLayout
+import com.technipixl.filrouge.HomeActivity
+import com.technipixl.filrouge.R
 import com.technipixl.filrouge.databinding.ActivityAuthentificationBinding
 import java.util.regex.Pattern
 

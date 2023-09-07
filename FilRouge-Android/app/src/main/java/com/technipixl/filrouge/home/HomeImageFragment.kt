@@ -1,4 +1,4 @@
-package com.technipixl.filrouge
+package com.technipixl.filrouge.home
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.technipixl.filrouge.databinding.FragmentHomeBinding
 import com.technipixl.filrouge.databinding.FragmentHomeImageBinding
 
-class HomeImageFragment(private val picture: Drawable?, val text: String) : Fragment() {
+class HomeImageFragment(private val picture: Int, val text: String) : Fragment() {
     lateinit var binding: FragmentHomeImageBinding
 
     override fun onCreateView(
@@ -22,7 +22,7 @@ class HomeImageFragment(private val picture: Drawable?, val text: String) : Frag
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.imageView.setImageDrawable(picture)
+        binding.imageView.setImageResource(picture)
         binding.cardviewText.text = text
     }
 }

@@ -1,11 +1,13 @@
-package com.technipixl.filrouge
+package com.technipixl.filrouge.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.tabs.TabLayoutMediator
 import com.technipixl.filrouge.databinding.FragmentHomeBinding
+import com.technipixl.filrouge.home.HomeGalleryPageAdapter
 
 
 class HomeFragment : Fragment() {
@@ -29,6 +31,8 @@ class HomeFragment : Fragment() {
     private fun setupViewPager() {
         val pagerAdapter = HomeGalleryPageAdapter(requireActivity())
         binding.homeViewpager.adapter = pagerAdapter
+
+        TabLayoutMediator(binding.homeTabLayout, binding.homeViewpager) {tab, position ->}.attach()
 
     }
 }

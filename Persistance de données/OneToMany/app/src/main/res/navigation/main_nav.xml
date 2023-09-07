@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/authorsListFragment">
+
+    <fragment
+        android:id="@+id/authorsListFragment"
+        android:name="com.technipixl.onetomany.ui.authorList.AuthorsListFragment"
+        android:label="fragment_authors_list"
+        tools:layout="@layout/fragment_authors_list" >
+        <action
+            android:id="@+id/action_authorsListFragment_to_authorDetailsFragment"
+            app:destination="@id/authorDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authorDetailsFragment"
+        android:name="com.technipixl.onetomany.ui.details.AuthorDetailsFragment"
+        android:label="fragment_author_details"
+        tools:layout="@layout/fragment_author_details" >
+        <argument
+            android:name="authorName"
+            app:argType="string" />
+        <argument
+            android:name="authorId"
+            app:argType="long" />
+    </fragment>
+</navigation>
