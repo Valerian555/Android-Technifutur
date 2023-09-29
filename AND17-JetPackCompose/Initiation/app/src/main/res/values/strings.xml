@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AND17-Exo1</string>
+    <string name="login_title">Login</string>
+    <string name="password_title">Mot de passe</string>
+    <string name="connect_title">Connexion</string>
+    <string name="create_account_title">Créer un compte</string>
+</resources>
