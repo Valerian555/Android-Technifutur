@@ -7,13 +7,12 @@
     tools:context=".home.HomeFragment"
     android:background="@mipmap/bg_blue">
 
-    <androidx.viewpager2.widget.ViewPager2
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/home_viewpager"
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <com.google.android.material.tabs.TabLayout

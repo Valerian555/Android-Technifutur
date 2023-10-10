@@ -8,8 +8,7 @@
     android:orientation="vertical"
     android:background="@drawable/cardview_background"
     android:gravity="center"
-    android:padding="50dp"
-    android:layout_marginStart="20dp">
+    >
 
     <ImageView
         android:id="@+id/imageView"
